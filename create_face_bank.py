@@ -22,6 +22,11 @@ for person_name in os.listdir(face_bank_path):
             image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
             result = app.get(image)
 
+            if len(result) > 1:
+                print(f"Warning: more than one face detected in image: {file_path}")
+                continue
+
             embedding = result[0]["embedding"]
             dict = {"name": person_name, "embedding": embedding}
             face_bank.append(dict)
+
