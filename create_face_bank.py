@@ -30,3 +30,5 @@ for person_name in os.listdir(face_bank_path):
             dict = {"name": person_name, "embedding": embedding}
             face_bank.append(dict)
 
+# print(face_bank)
+np.save("face_bank.npy", face_bank)
