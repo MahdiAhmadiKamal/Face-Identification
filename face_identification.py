@@ -20,9 +20,10 @@ results = app.get(input_image)
 
 face_bank = np.load("face_bank.npy", allow_pickle=True)
 
+
 for result in results:
-    cv2.rectangle(input_image, (int(result.bbox[0]), int(result.bbox[1])), (int(result.bbox[2]), int(result.bbox[3])), 
-                  (0, 255, 0), 2)
+    cv2.rectangle(input_image, (int(result.bbox[0]), int(result.bbox[1])), 
+                  (int(result.bbox[2]), int(result.bbox[3])), (0, 255, 0), 2)
     
     for person in face_bank:
         face_bank_person_embedding = person["embedding"]
