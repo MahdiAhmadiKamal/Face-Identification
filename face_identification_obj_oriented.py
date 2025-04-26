@@ -12,9 +12,13 @@ class FaceIdentification:
 
     def load_image(self, opt):
         self.input_image = cv2.imread(opt.image)
+        self.results = self.app.get(self.input_image)
+
+    def load_face_bank(self):
+        self.face_bank = np.load("face_bank.npy", allow_pickle=True)
         
-    def identification(self, app):
-        self.results = app.get(self.input_image)
+    def identification(self):
+        ...
 
 
 if __name__ == "__main__":
