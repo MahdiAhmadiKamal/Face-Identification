@@ -5,12 +5,12 @@ from insightface.app import FaceAnalysis
 
 
 class FaceIdentification:
-    def __init__(self, opt):
-        self.opt = opt
+    def __init__(self):
         self.app = FaceAnalysis(name="buffalo_s", providers=['CUDAExecutionProvider'])
         self.app.prepare(ctx_id=0, det_size=(640, 640))
+        self.threshold = 25
 
-    def get_image(self, opt):
+    def load_image(self, opt):
         self.input_image = cv2.imread(opt.image)
         
     def identification(self, app):
