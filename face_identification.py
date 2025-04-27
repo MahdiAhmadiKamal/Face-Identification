@@ -7,7 +7,6 @@ from insightface.app import FaceAnalysis
 parser = argparse.ArgumentParser()
 parser.add_argument('--image', type=str, default="input\image.jpg")
 parser.add_argument('--threshold', type=str, default=25)
-parser.add_argument('--update')
 
 opt = parser.parse_args()
 

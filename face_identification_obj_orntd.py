@@ -11,7 +11,6 @@ class FaceIdentification:
         self.threshold = 25
 
     def load_image(self, opt):
-        print("load")
         self.input_image = cv2.imread(opt.image)
         self.results = self.app.get(self.input_image)
 
