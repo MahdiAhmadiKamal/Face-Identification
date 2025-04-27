@@ -2,6 +2,7 @@ import argparse
 import cv2
 import numpy as np
 from insightface.app import FaceAnalysis
+from create_face_bank_obj_orntd import CreateFaceBank
 
 
 class FaceIdentification:
@@ -16,6 +17,9 @@ class FaceIdentification:
 
     def load_face_bank(self):
         self.face_bank = np.load("face_bank.npy", allow_pickle=True)
+
+    def update_face_bank(self, opt):
+        CreateFaceBank.update(opt.update)
         
     def identification(self):
         for result in self.results:
@@ -49,11 +53,16 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--image', type=str, default="input/image.jpg")
     parser.add_argument('--threshold', type=str, default=25)
-    parser.add_argument('--update')
+    parser.add_argument('--update', action='store_true')
 
     opt = parser.parse_args()
 
     cls = FaceIdentification()
     cls.load_image(opt)
+
+    if opt.update:
+        cls.update_face_bank(opt)
+
     cls.load_face_bank()
     cls.identification()
+    # cls.update_face_bank()
