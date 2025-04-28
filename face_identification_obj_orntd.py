@@ -10,6 +10,7 @@ class FaceIdentification:
         self.app = FaceAnalysis(name="buffalo_s", providers=['CUDAExecutionProvider'])
         self.app.prepare(ctx_id=0, det_size=(640, 640))
         self.threshold = 25
+        self.face_bank_path = "./face_bank/"
 
     def load_image(self, opt):
         self.input_image = cv2.imread(opt.image)
@@ -19,7 +20,7 @@ class FaceIdentification:
         self.face_bank = np.load("face_bank.npy", allow_pickle=True)
 
     def update_face_bank(self, opt):
-        CreateFaceBank.update(opt.update, "./face_bank/")
+        CreateFaceBank.update(opt.update, self.face_bank_path, self.app)
         
     def identification(self):
         for result in self.results:
@@ -57,12 +58,12 @@ if __name__ == "__main__":
 
     opt = parser.parse_args()
 
-    cls = FaceIdentification()
-    cls.load_image(opt)
+    obj = FaceIdentification()
+    obj.load_image(opt)
 
     if opt.update:
-        cls.update_face_bank(opt)
+        
+        obj.update_face_bank(opt)
 
-    cls.load_face_bank()
-    cls.identification()
-    # cls.update_face_bank()
+    obj.load_face_bank()
+    obj.identification()
