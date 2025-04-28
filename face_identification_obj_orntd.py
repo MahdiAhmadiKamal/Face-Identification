@@ -19,7 +19,7 @@ class FaceIdentification:
         self.face_bank = np.load("face_bank.npy", allow_pickle=True)
 
     def update_face_bank(self, opt):
-        CreateFaceBank.update(opt.update)
+        CreateFaceBank.update(opt.update, "./face_bank/")
         
     def identification(self):
         for result in self.results:

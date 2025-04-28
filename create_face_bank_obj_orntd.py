@@ -3,11 +3,12 @@ import cv2
 import numpy as np
 from insightface.app import FaceAnalysis
 
+
 class CreateFaceBank:
-    def __init__(self):
+    def __init__(self, face_bank_path="./face_bank/"):
         self.app = FaceAnalysis(name="buffalo_s", providers=['CUDAExecutionProvider'])
         self.app.prepare(ctx_id=0, det_size=(640, 640))
-        self.face_bank_path = None
+        self.face_bank_path = face_bank_path
 
     def extract_embedding(self):
         face_bank = []
@@ -32,8 +33,15 @@ class CreateFaceBank:
 
         np.save("face_bank_2.npy", face_bank)
 
-    def update(self):
+    def update(self, face_bank_path):
         print("***")
-        self.face_bank_path = "./face_bank/"
-        for person_name in os.listdir(self.face_bank_path):
+        
+        for person_name in os.listdir(face_bank_path):
             print(person_name)
+            folder_path = os.path.join(face_bank_path, person_name)
+            print(folder_path)
+            if os.path.isdir(folder_path):
+                
+                for file_name in os.listdir(folder_path):
+                    file_path = os.path.join(folder_path, file_name)
+                    print(file_path)
