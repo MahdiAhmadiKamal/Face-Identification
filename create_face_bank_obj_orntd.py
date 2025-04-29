@@ -6,7 +6,7 @@ from insightface.app import FaceAnalysis
 
 class CreateFaceBank:
     def __init__(self, face_bank_path="./face_bank/"):
-        # self.app = FaceAnalysis(name="buffalo_s", providers=['CUDAExecutionProvider'])
+        # self.app = FaceAnalysis(name="buffalo_s", providers=['CPUExecutionProvider'])
         # self.app.prepare(ctx_id=0, det_size=(640, 640))
         self.face_bank_path = face_bank_path
 

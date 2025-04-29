@@ -7,7 +7,7 @@ from create_face_bank_obj_orntd import CreateFaceBank
 
 class FaceIdentification:
     def __init__(self):
-        self.app = FaceAnalysis(name="buffalo_s", providers=['CUDAExecutionProvider'])
+        self.app = FaceAnalysis(name="buffalo_s", providers=['CPUExecutionProvider'])
         self.app.prepare(ctx_id=0, det_size=(640, 640))
         self.threshold = 25
         self.face_bank_path = "./face_bank/"
@@ -62,7 +62,6 @@ if __name__ == "__main__":
     obj.load_image(opt)
 
     if opt.update:
-        
         obj.update_face_bank(opt)
 
     obj.load_face_bank()

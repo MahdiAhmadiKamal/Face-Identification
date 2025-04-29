@@ -5,12 +5,12 @@ from insightface.app import FaceAnalysis
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--image', type=str, default="input\image.jpg")
+parser.add_argument('--image', type=str, default="input/image.jpg")
 parser.add_argument('--threshold', type=str, default=25)
 
 opt = parser.parse_args()
 
-app = FaceAnalysis(name="buffalo_s", providers=['CUDAExecutionProvider'])
+app = FaceAnalysis(name="buffalo_s", providers=['CPUExecutionProvider'])
 app.prepare(ctx_id=0, det_size=(640, 640))
 
 input_image = cv2.imread(opt.image)

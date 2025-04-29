@@ -4,7 +4,7 @@ import numpy as np
 from insightface.app import FaceAnalysis
 
 
-app = FaceAnalysis(name="buffalo_s", providers=['CUDAExecutionProvider'])
+app = FaceAnalysis(name="buffalo_s", providers=['CPUExecutionProvider'])
 app.prepare(ctx_id=0, det_size=(640, 640))
 
 face_bank_path = "./face_bank/"
