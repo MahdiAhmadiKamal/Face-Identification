@@ -1,5 +1,5 @@
 # Face Identification
 
-<img src="pics\result_image.jpg" width="1000">
+<img src="pics\result_image.jpg" width="1200">
 
 
