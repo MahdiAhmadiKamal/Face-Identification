@@ -6,7 +6,7 @@ Face identification is a technology that uses algorithms and computer vision to 
 
 <img src="pics\result_image_0.jpg" width="1000">
 
-
+This deep learning project belongs to voice classification of 22 people. This project is built with the aid of [pydub](https://github.com/jiaaro/pydub). Finally, a telegram bot has been created that receives speech and predicts the name of the speaker.
 
 
 ## How to install
@@ -14,4 +14,11 @@ Run this command:
 ```
 pip install -r requirements.txt
 ```
+
+## How to run
++ For each person whose face image you want to have identified, create a folder in `face_bank` directory.
++ Put a few images of each person in the folder corresponding to that person.
++ Run the following command to make `face_bank.npy`:
+
+
 
