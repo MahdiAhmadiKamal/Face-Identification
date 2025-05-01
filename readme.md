@@ -6,4 +6,3 @@ Face identification is a technology that uses algorithms and computer vision to 
 
 <img src="pics\result_image_0.jpg" width="1000">
 
-
