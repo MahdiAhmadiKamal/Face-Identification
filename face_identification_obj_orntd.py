@@ -32,20 +32,24 @@ class FaceIdentification:
                 new_person_embedding = result["embedding"]
                 distance = np.sqrt(np.sum((face_bank_person_embedding - new_person_embedding)**2))
                 if distance <= opt.threshold:
-                    cv2.putText(self.input_image, person["name"], (int(result.bbox[0])-50, int(result.bbox[1])-10),
-                                fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(0, 0, 0), thickness=4, 
-                                lineType=cv2.LINE_AA)
-                    cv2.putText(self.input_image, person["name"], (int(result.bbox[0])-50, int(result.bbox[1])-10),
-                                fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(0, 255, 0), thickness=2, 
-                                lineType=cv2.LINE_AA)
+                    cv2.putText(self.input_image, person["name"], 
+                                (int(result.bbox[0])-50, int(result.bbox[1])-10),
+                                fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, 
+                                color=(0, 0, 0), thickness=4, lineType=cv2.LINE_AA)
+                    cv2.putText(self.input_image, person["name"], 
+                                (int(result.bbox[0])-50, int(result.bbox[1])-10),
+                                fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, 
+                                color=(0, 255, 0), thickness=2, lineType=cv2.LINE_AA)
                     break
             else:
-                cv2.putText(self.input_image, "Unknown", (int(result.bbox[0])-50, int(result.bbox[1])-10),
-                                fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(0, 0, 0), thickness=4, 
-                                lineType=cv2.LINE_AA)
-                cv2.putText(self.input_image, "Unknown", (int(result.bbox[0])-50, int(result.bbox[1])-10),
-                                fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(0, 0, 255), thickness=2, 
-                                lineType=cv2.LINE_AA)
+                cv2.putText(self.input_image, "Unknown", 
+                            (int(result.bbox[0])-50, int(result.bbox[1])-10),
+                                fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, 
+                                color=(0, 0, 0), thickness=4, lineType=cv2.LINE_AA)
+                cv2.putText(self.input_image, "Unknown", 
+                            (int(result.bbox[0])-50, int(result.bbox[1])-10),
+                                fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, 
+                                color=(0, 0, 255), thickness=2, lineType=cv2.LINE_AA)
                 
         cv2.imwrite("output/result_image.jpg", self.input_image)
 
