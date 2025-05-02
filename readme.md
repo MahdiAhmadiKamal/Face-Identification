@@ -17,8 +17,13 @@ pip install -r requirements.txt
 
 ## How to run
 + For each person whose face image you want to have identified, create a folder in `face_bank` directory.
-+ Put a few images of each person in the folder corresponding to that person.
-+ Run the following command to make `face_bank.npy`:
++ Put a few images of each person in the folder corresponding to that person. The photos in this folder should contain only a single face image.
++ Put the image, in which you want to identify faces, in `input` directory.
++ By running the following command, the file `face_bank.npy` is created and the faces are then identified.
+
+```
+python face_identification_obj_orntd.py --update
+```
 
 
 
