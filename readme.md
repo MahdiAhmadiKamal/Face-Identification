@@ -24,6 +24,8 @@ pip install -r requirements.txt
 ```
 python face_identification_obj_orntd.py --update
 ```
++ You can see the result in `output` directory.
 
-
+Note: 
+```
 
