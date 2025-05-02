@@ -39,3 +39,6 @@ To identify a new person's image, create a folder for every new person in `face_
 ```
 python face_identification_obj_orntd.py --update
 ```
+
+The following images show the results before and after updating the face_bank.
+
