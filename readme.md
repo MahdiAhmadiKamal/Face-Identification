@@ -42,3 +42,4 @@ python face_identification_obj_orntd.py --update
 
 The following images show the results before and after updating the face_bank.
 
+**Before updating the face_bank**
