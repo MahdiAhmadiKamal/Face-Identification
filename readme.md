@@ -26,6 +26,7 @@ python face_identification_obj_orntd.py --update
 ```
 + You can see the result in `output` directory.
 
-Note: 
-```
+Note: You don't need to create `face_bank.npy` every time. After `face_bank.npy` is created, you can identify people faces by running the following command:
+
+
 
