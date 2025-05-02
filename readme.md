@@ -33,3 +33,9 @@ python face_identification_obj_orntd.py --image PATH/TO/IMAGE/FILE.
 ```
 
 ### What if we want to identify a new person's image?
+
+To identify a new person's image, create a folder for every new person in `face_bank` directory and put there a few images of that person in it. If you no longer want a person's face to be identified, you can delete their folder from the `face_bank` folder. Again, update the `face_bank.npy` by running the following command and enjoy it.
+
+```
+python face_identification_obj_orntd.py --update
+```
