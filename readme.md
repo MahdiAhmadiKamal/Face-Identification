@@ -2,11 +2,11 @@
 
 <img src="pics\result_image.jpg" width="1000">
 
-Face identification is a technology that uses algorithms and computer vision to analyze facial features in an image and compare them to a database of known faces to determine a match. It's a form of biometric identification that verifies or identifies a person based on their facial features. 
+Face identification is a technology that uses algorithms and computer vision to analyze facial features in an image and compares them to a database of known faces to determine a match. It's a form of biometric identification that verifies or identifies a person based on their facial features. 
 
 <img src="pics\result_image_0.jpg" width="1000">
 
-This deep learning project belongs to voice classification of 22 people. This project is built with the aid of [pydub](https://github.com/jiaaro/pydub). Finally, a telegram bot has been created that receives speech and predicts the name of the speaker.
+The way it works is that the embedding vectors of images are extracted using [insightface](https://github.com/deepinsight/insightface). Then the vectors belong to faces are saved in face bank file. Identification process is carried out by comparing the embedding vectors of new faces with those stored in the face bank.
 
 
 ## How to install
